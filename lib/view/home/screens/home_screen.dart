@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nesto_hypermarket/view/customer/customer_screen.dart';
 import 'package:nesto_hypermarket/view/home/screens/add_payment/add_payment_screen.dart';
-import 'package:nesto_hypermarket/view/home/screens/products/product.dart';
+import 'package:nesto_hypermarket/view/home/screens/products/screen/product.dart';
 import 'package:nesto_hypermarket/view/home/screens/route/route.dart';
 import 'package:nesto_hypermarket/view/home/screens/today_summery/todays_summery.dart';
 // import 'package:nesto_hypermarket/view/home/screens/today's_order/todays_order.dart';
@@ -21,8 +21,7 @@ class HomeScreen extends StatelessWidget {
         screens: const CustomerScreen(),
         icon: Icons.people,
         title: 'Customers'),
-    HomeCards(
-        screens: const ProductScreen(), icon: Icons.gif_box, title: 'Products'),
+    HomeCards(screens: ProductScreen(), icon: Icons.gif_box, title: 'Products'),
     HomeCards(
         screens: const ScreenNewOrder(),
         icon: Icons.add_box_outlined,
@@ -71,6 +70,7 @@ class HomeScreen extends StatelessWidget {
                         const cardHeight = 170.0;
 
                         return GridView.builder(
+                          physics: ScrollPhysics(),
                           shrinkWrap: true,
                           itemCount: _cards.length,
                           gridDelegate:
