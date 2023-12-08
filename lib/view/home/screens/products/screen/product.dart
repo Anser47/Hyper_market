@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nesto_hypermarket/view/common/bottom_navigation_bar.dart';
 import 'package:nesto_hypermarket/view/home/screens/products/widget/product_card.dart';
 import 'package:nesto_hypermarket/view/home/screens/products/widget/searchTextfield.dart';
-import '../widget/product_head.dart';
+import '../../../../common/widget/product_head.dart';
 import 'package:flutter/cupertino.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -28,13 +27,13 @@ class ProductScreen extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
-        body: Container(
+        body: SizedBox(
           height: size.height, // Set a height constraint
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                ProducetScreenHeadWidget(size: size),
+                ProducetScreenHeadWidget(size: size, name: "Nesto Hypermarket"),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Container(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nesto_hypermarket/provider/common/bottomnavigationbar_provider.dart';
+import 'package:nesto_hypermarket/provider/customer_screen_provider/customer_provider.dart';
 import 'package:nesto_hypermarket/view/common/bottom_navigation_bar.dart';
 import 'package:provider/provider.dart';
 
@@ -12,8 +13,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => PageProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => PageProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => CustomerPovider(),
+        )
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primarySwatch: Colors.blue),

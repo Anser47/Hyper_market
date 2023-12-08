@@ -70,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                         const cardHeight = 170.0;
 
                         return GridView.builder(
-                          physics: ScrollPhysics(),
+                          physics: const ScrollPhysics(),
                           shrinkWrap: true,
                           itemCount: _cards.length,
                           gridDelegate:

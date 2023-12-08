@@ -87,10 +87,11 @@ class ProductCard extends StatelessWidget {
                     )),
                   ),
                   child: const Center(
-                      child: Text(
-                    'Add',
-                    style: TextStyle(color: Colors.white),
-                  )),
+                    child: Text(
+                      'Add',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
                 )
               ],
             ),

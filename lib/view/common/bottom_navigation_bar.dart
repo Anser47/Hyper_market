@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nesto_hypermarket/cart/cart_screen.dart';
+import 'package:nesto_hypermarket/cart/screens/cart_screen.dart';
 import 'package:nesto_hypermarket/view/customer/customer_screen.dart';
 import 'package:nesto_hypermarket/view/home/screens/home_screen.dart';
 import 'package:nesto_hypermarket/view/new_order/new_order_screen.dart';
@@ -21,7 +21,7 @@ class MyHomePage extends StatelessWidget {
         title: 'Home',
         screens: HomeScreen()),
     Page(icon: Icons.add, title: 'New Order', screens: const ScreenNewOrder()),
-    Page(icon: Icons.shopping_cart, title: 'Cart', screens: const CartScreen()),
+    Page(icon: Icons.shopping_cart, title: 'Cart', screens: CartScreen()),
     Page(
         icon: Icons.undo, title: 'Return Order', screens: const ReturnScreen()),
     Page(
