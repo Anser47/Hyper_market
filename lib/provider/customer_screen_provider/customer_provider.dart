@@ -1,7 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nesto_hypermarket/model/customer_model.dart';
+import 'package:http/http.dart' as http;
 
 class CustomerPovider extends ChangeNotifier {
+  // List<CustomersModel> customerList = [];
+  // Future<List<CustomersModel>> getCustomer() {
+  //   final response = http.get(Uri.parse('http://62.72.44.247/api/customers/'));
+  // }
+
   void showBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,

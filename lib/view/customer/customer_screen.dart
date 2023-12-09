@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nesto_hypermarket/provider/customer_screen_provider/customer_provider.dart';
 import 'package:nesto_hypermarket/view/common/widget/product_head.dart';

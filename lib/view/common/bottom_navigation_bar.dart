@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nesto_hypermarket/cart/screens/cart_screen.dart';
+import 'package:nesto_hypermarket/view/cart/screens/cart_screen.dart';
 import 'package:nesto_hypermarket/view/customer/customer_screen.dart';
 import 'package:nesto_hypermarket/view/home/screens/home_screen.dart';
 import 'package:nesto_hypermarket/view/new_order/new_order_screen.dart';
