@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => CustomerPovider(),
         ),
-        ChangeNotifierProvider(
-          create: (context) => ProductProvider(),
-        )
+        // ChangeNotifierProvider(
+        //   create: (context) => ProductProvider(),
+        // ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

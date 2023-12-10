@@ -24,7 +24,9 @@ class ProducetScreenHeadWidget extends StatelessWidget {
             },
             icon: const Icon(Icons.arrow_back_ios),
           ),
-          const SizedBox(width: 5), // Adjust as needed
+          const SizedBox(
+            width: 5,
+          ), // Adjust as needed
           Expanded(
             child: Center(
               child: Text(

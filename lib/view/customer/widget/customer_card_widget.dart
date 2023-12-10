@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:nesto_hypermarket/model/customer_model.dart';
 import 'package:nesto_hypermarket/view/customer/widget/circular_button_widget.dart';
 
 class CustomerCardWidget extends StatelessWidget {
   const CustomerCardWidget({
     super.key,
+    required this.customer,
   });
-
+  final CustomerData customer;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -21,13 +23,14 @@ class CustomerCardWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(
                   Radius.circular(6),
                 ),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage('assets/images/Designer.jpeg'),
+                  image: NetworkImage(customer.profilePic ??
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToIMut-4h-8WCeoCGcr_-REk1il2Xt1btjrw&usqp=CAU'),
                 ),
               ),
               width: 70,
@@ -35,39 +38,39 @@ class CustomerCardWidget extends StatelessWidget {
             ),
             const SizedBox(width: 6.0),
             Container(
-              height: 65,
+              height: 75,
               width: 0.5,
               color: Colors.grey,
             ),
             const SizedBox(width: 10.0),
-            const Expanded(
+            Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Nesto HyperMarket',
-                    style: TextStyle(
+                    customer.name ?? 'name',
+                    style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
-                    'ID: D013DR',
-                    style: TextStyle(
+                    'ID: IDO${customer.id}DR',
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 14,
                       color: Colors.grey,
                     ),
                   ),
                   Text(
-                    'West Palzai Calicut ',
-                    style: TextStyle(
+                    '${customer.street} ${customer.city} ${customer.country}',
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 14,
                       color: Colors.grey,
                     ),
                   ),
-                  Row(
+                  const Row(
                     children: [
                       Text(
                         'Due Amount: ',

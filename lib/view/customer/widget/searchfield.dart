@@ -1,16 +1,31 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nesto_hypermarket/provider/customer_screen_provider/customer_provider.dart';
 import 'package:nesto_hypermarket/view/customer/widget/circular_button_widget.dart';
+import 'package:provider/provider.dart';
 
-class SearchWidget extends StatelessWidget {
+class SearchWidget extends StatefulWidget {
   SearchWidget({
     required this.bottomSheet,
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
   VoidCallback bottomSheet;
+
+  @override
+  State<SearchWidget> createState() => _SearchWidgetState();
+}
+
+class _SearchWidgetState extends State<SearchWidget> {
+  String searchValue = '';
   @override
   Widget build(BuildContext context) {
     return CupertinoTextField(
+      onSubmitted: (value) {
+        setState(() {
+          searchValue = value;
+        });
+        context.read<CustomerPovider>().getSearchCustomers(value);
+      },
       padding: const EdgeInsets.all(16.0),
       placeholder: 'Search',
       placeholderStyle: const TextStyle(color: Colors.grey),
@@ -40,11 +55,12 @@ class SearchWidget extends StatelessWidget {
             width: 8,
           ),
           CircularButton(
-              icon: Icons.add,
-              circleSize: 25,
-              onPressed: () {
-                bottomSheet();
-              }),
+            icon: Icons.add,
+            circleSize: 25,
+            onPressed: () {
+              widget.bottomSheet();
+            },
+          ),
           const SizedBox(
             width: 8,
           ),
